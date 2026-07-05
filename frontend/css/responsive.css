@@ -1,0 +1,119 @@
+@media (max-width: 1040px) {
+  .nav-toggle {
+    display: grid;
+    place-items: center;
+  }
+
+  .nav-menu {
+    position: fixed;
+    inset: var(--nav-height) 1rem auto;
+    display: none;
+    padding: 1rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background: rgba(6, 10, 22, 0.94);
+    backdrop-filter: blur(18px);
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .nav-menu.is-open {
+    display: flex;
+  }
+
+  .nav-menu__link {
+    padding: 0.9rem 1rem;
+  }
+
+  .navbar__cta {
+    display: none;
+  }
+
+  .hero__grid,
+  .split,
+  .footer__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-visual {
+    min-height: 460px;
+  }
+
+  .grid--4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  :root {
+    --nav-height: 68px;
+  }
+
+  .section {
+    padding: 4rem 0;
+  }
+
+  .hero {
+    padding-top: calc(var(--nav-height) + 2rem);
+  }
+
+  .hero__grid {
+    gap: 2rem;
+  }
+
+  .hero__metrics,
+  .grid--2,
+  .grid--3,
+  .grid--4,
+  .form__grid,
+  .founder-card {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-visual {
+    min-height: 380px;
+  }
+
+  .orbital-card {
+    position: relative;
+    inset: auto;
+    width: 100%;
+  }
+
+  .hero-visual {
+    gap: 1rem;
+  }
+
+  .neural-core {
+    width: min(76vw, 300px);
+  }
+
+  .footer__bottom {
+    flex-direction: column;
+  }
+
+  .chat-widget {
+    right: 1rem;
+    bottom: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .brand__text span {
+    max-width: 145px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .hero__actions,
+  .page-hero__actions,
+  .cta-band__actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}

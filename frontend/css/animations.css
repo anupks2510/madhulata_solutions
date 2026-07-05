@@ -1,0 +1,44 @@
+@keyframes auroraDrift {
+  from { transform: translate3d(-1.5%, -1%, 0) scale(1); }
+  to { transform: translate3d(1.5%, 1%, 0) scale(1.04); }
+}
+
+@keyframes floatY {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-18px); }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 24px rgba(91, 231, 255, 0.16); }
+  50% { box-shadow: 0 0 46px rgba(91, 231, 255, 0.34); }
+}
+
+.reveal-up {
+  opacity: 0;
+  transform: translateY(18px);
+}
+
+.is-visible .reveal-up,
+.reveal-up.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.glow-pulse {
+  animation: pulseGlow 3.5s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
