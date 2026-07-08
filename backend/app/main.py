@@ -1,16 +1,19 @@
 from fastapi import FastAPI
 
-from app.database import engine
-from app.models import Base
+from app.db.database import engine
+from app.db.base import Base
 
 import app.models.lead
-Base.metadata.create_all(bind=engine)
+from app.routers.leads import router as lead_router
+# Base.metadata.create_all(bind=engine)
 
 app = FastAPI(
     title="Madhulata Solutions API",
     description="Backend API for AI Consultancy Platform",
     version="1.0.0"
 )
+
+app.include_router(lead_router)
 
 @app.get("/")
 def root():
