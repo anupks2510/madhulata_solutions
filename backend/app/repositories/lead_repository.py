@@ -2,10 +2,11 @@ from sqlalchemy.orm import Session
 
 from app.models.lead import Lead
 from app.schemas.lead import LeadCreate, LeadUpdate
-
+from app.services.n8n_service import send_new_lead
 
 class LeadRepository:
 
+    @staticmethod
     @staticmethod
     def create(db: Session, lead: LeadCreate):
 
@@ -20,8 +21,13 @@ class LeadRepository:
         )
 
         db.add(db_lead)
+
         db.commit()
+
         db.refresh(db_lead)
+
+        # Trigger n8n automation
+        send_new_lead(db_lead)
 
         return db_lead
 
