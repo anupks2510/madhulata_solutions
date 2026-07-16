@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>Madhulata Admin</title>
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<link rel="stylesheet" href="css/dashboard.css">
+
+</head>
+
+<body>
+
+    <div class="dashboard">
+    
+        <aside id="sidebar"></aside>
+    
+        <main>
+    
+            <header id="navbar"></header>
+    
+            <!-- ADD EVERYTHING BELOW HERE -->
+    
+            <section class="cards">
+    
+                <div class="card">
+                    <div class="card-top">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+                    <h4>Total Leads</h4>
+                    <h1 id="totalLeads">0</h1>
+                </div>
+    
+                <div class="card">
+                    <div class="card-top">
+                        <i class="fa-solid fa-user-plus"></i>
+                    </div>
+                    <h4>New Leads</h4>
+                    <h1 id="newLeads">0</h1>
+                </div>
+    
+                <div class="card">
+                    <div class="card-top">
+                        <i class="fa-solid fa-briefcase"></i>
+                    </div>
+                    <h4>Clients</h4>
+                    <h1 id="clients">0</h1>
+                </div>
+    
+                <div class="card">
+                    <div class="card-top">
+                        <i class="fa-solid fa-calendar-check"></i>
+                    </div>
+                    <h4>Meetings</h4>
+                    <h1 id="meetings">0</h1>
+                </div>
+    
+            </section>
+    
+            <section class="charts">
+    
+                <div class="chart-card">
+                    <h2>Lead Growth</h2>
+                    <canvas id="leadChart"></canvas>
+                </div>
+    
+            </section>
+    
+            <section class="table-card">
+    
+                <h2>Recent Leads</h2>
+    
+                <table>
+    
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Company</th>
+                            <th>Service</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+    
+                    <tbody id="leadTable">
+                    </tbody>
+    
+                </table>
+    
+            </section>
+    
+        </main>
+    
+    </div>
+    
+    <script type="module" src="js/layout.js"></script>
+    <script type="module" src="js/dashboard.js"></script>
+    
+    </body>
+
+</html>

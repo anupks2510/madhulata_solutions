@@ -428,3 +428,82 @@ button {
   color: var(--color-soft);
   font-size: 0.92rem;
 }
+
+.typing-message{
+
+  display:flex;
+
+  flex-direction:column;
+
+  gap:8px;
+
+}
+
+.typing{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:6px;
+
+}
+
+.typing span{
+
+  width:8px;
+
+  height:8px;
+
+  border-radius:50%;
+
+  background:#43d9ff;
+
+  animation:typing 1.4s infinite;
+
+}
+
+.typing span:nth-child(2){
+
+  animation-delay:.2s;
+
+}
+
+.typing span:nth-child(3){
+
+  animation-delay:.4s;
+
+}
+
+.typing-message small{
+
+  color:#9fb3d9;
+
+  font-size:12px;
+
+}
+
+@keyframes typing{
+
+  0%{
+
+      opacity:.3;
+      transform:translateY(0);
+
+  }
+
+  50%{
+
+      opacity:1;
+      transform:translateY(-4px);
+
+  }
+
+  100%{
+
+      opacity:.3;
+      transform:translateY(0);
+
+  }
+
+}

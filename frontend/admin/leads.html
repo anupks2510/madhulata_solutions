@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Leads</title>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<link rel="stylesheet"
+href="css/dashboard.css">
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <aside id="sidebar"></aside>
+
+    <main>
+
+        <header id="navbar"></header>
+
+        <div class="page-header">
+
+            <h1>Lead Management</h1>
+
+        </div>
+
+        <div class="toolbar">
+
+            <input
+                id="searchLead"
+                placeholder="Search by name..."
+            >
+
+            <select id="statusFilter">
+
+                <option value="">All Status</option>
+
+                <option>NEW</option>
+
+                <option>CONTACTED</option>
+
+                <option>CLIENT</option>
+
+            </select>
+
+        </div>
+
+        <div class="table-card">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>Name</th>
+
+                        <th>Email</th>
+
+                        <th>Company</th>
+
+                        <th>Service</th>
+
+                        <th>Status</th>
+
+                        <th>Action</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody id="leadTable">
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </main>
+
+</div>
+
+<script type="module" src="js/layout.js"></script>
+
+<script type="module" src="js/leads.js"></script>
+
+</body>
+
+</html>
