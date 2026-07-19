@@ -1,0 +1,77 @@
+services:
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+
+    container_name: madhulata_backend
+
+    restart: unless-stopped
+
+    ports:
+      - "8000:8000"
+
+    env_file:
+      - ./backend/.env
+
+    depends_on:
+      - postgres
+      - n8n
+
+    networks:
+      - madhulata_network
+
+
+  postgres:
+    image: postgres:17
+
+    container_name: madhulata_postgres
+
+    restart: unless-stopped
+
+    environment:
+      POSTGRES_DB: madhulata_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: "123"
+
+    ports:
+      - "5432:5432"
+
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+    networks:
+      - madhulata_network
+
+
+  n8n:
+    image: n8nio/n8n:latest
+
+    container_name: madhulata_n8n
+
+    restart: unless-stopped
+
+    ports:
+      - "5678:5678"
+
+    environment:
+      - N8N_HOST=0.0.0.0
+      - N8N_PORT=5678
+      - N8N_PROTOCOL=http
+      - WEBHOOK_URL=http://localhost:5678/
+
+    volumes:
+      - ./n8n_data:/home/node/.n8n
+
+    networks:
+      - madhulata_network
+
+
+volumes:
+  postgres_data:
+
+
+networks:
+  madhulata_network:
+    driver: bridge

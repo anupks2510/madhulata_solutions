@@ -1,6 +1,8 @@
 import requests
+import os
 
-N8N_WEBHOOK = "http://localhost:5678/webhook-test/new-lead"
+N8N_WEBHOOK = os.getenv("N8N_WEBHOOK_URL")
+
 
 
 def send_new_lead(lead):

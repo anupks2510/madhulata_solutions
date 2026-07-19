@@ -1,32 +1,49 @@
-
-# Virtual Environment
-venv/
-
+# ===========================
 # Python
+# ===========================
 __pycache__/
-*.pyc
+*.py[cod]
 *.pyo
 *.pyd
 
-# Environment variables
+# Virtual Environments
+venv/
+.venv/
+env/
+
+# Environment Variables
 .env
+.env.*
 
-# VS Code
+# IDE
 .vscode/
-
-# ChromaDB
-chroma_db/
-
-# Database
-*.db
+.idea/
 
 # Logs
 *.log
 
-# OS
-.DS_Store
-Thumbs.db
+# Python cache
+.pytest_cache/
+.mypy_cache/
 
-# Node (if you add it later)
+# SQLite
+*.db
+*.sqlite3
+
+# ChromaDB
+backend/chroma_db/
+backend/chroma/
+
+# OS
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Node
 node_modules/
 
+# n8n
+n8n/.n8n/
+
+# Docker
+*.pid
