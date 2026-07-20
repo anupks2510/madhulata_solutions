@@ -6,44 +6,82 @@ __pycache__/
 *.pyo
 *.pyd
 
+# ===========================
 # Virtual Environments
+# ===========================
 venv/
 .venv/
 env/
 
-# Environment Variables
+# ===========================
+# Environment Variables / Secrets
+# ===========================
 .env
 .env.*
 
+# Allow safe example environment files
+!.env.example
+
+# Explicitly protect backend environment file
+backend/.env
+
+# ===========================
 # IDE
+# ===========================
 .vscode/
 .idea/
 
+# ===========================
 # Logs
+# ===========================
 *.log
 
-# Python cache
+# ===========================
+# Python Cache
+# ===========================
 .pytest_cache/
 .mypy_cache/
 
-# SQLite
+# ===========================
+# SQLite / Local Databases
+# ===========================
 *.db
+*.sqlite
 *.sqlite3
+*.sqlite-shm
+*.sqlite-wal
 
+# ===========================
 # ChromaDB
+# ===========================
 backend/chroma_db/
 backend/chroma/
 
-# OS
+# ===========================
+# OS Files
+# ===========================
 Thumbs.db
 Desktop.ini
 .DS_Store
 
+# ===========================
 # Node
+# ===========================
 node_modules/
 
+# ===========================
 # n8n
+# ===========================
+
+# Old/default n8n local directory
 n8n/.n8n/
 
+# Current n8n persistent data directory
+# Contains workflows, credentials, SQLite DB,
+# encryption config, execution data, etc.
+n8n_data/
+
+# ===========================
 # Docker
+# ===========================
 *.pid
