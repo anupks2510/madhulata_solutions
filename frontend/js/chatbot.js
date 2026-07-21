@@ -1,5 +1,6 @@
-const API_URL = "http://127.0.0.1:8000/api/v1/ai/chat";
+// const API_URL = "http://127.0.0.1:8000/api/v1/ai/chat";
 
+const API_URL="https://madhulata-api.onrender.com/api/v1/ai/chat"
 export function initChatbot() {
   const widget = document.querySelector("[data-chat-widget]");
   if (!widget) return;
